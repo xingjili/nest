@@ -11,7 +11,7 @@ def generate_RSA(bits=4096):
     )
     private_key = new_key.private_bytes(
         encoding=serialization.Encoding.PEM,
-        format=serialization.PrivateFormat.PKCS8,
+        format=serialization.PrivateFormat.TraditionalOpenSSL,
         encryption_algorithm=serialization.NoEncryption()
     ).decode()
     public_key = new_key.public_key().public_bytes(
